@@ -649,19 +649,4 @@
     //     console.log("listening on port 3030");
     // });
 
-    app.get("/getNotifications", async(req, res)=>{
-
-        //default response data
-        let responseData = {"status":400};
-        try {
-            let inputparams = req.query;
-            responseData      = await dbinterface.getNotifications(inputparams);
-        } catch (error) {
-            //default response data
-            responseData = {"status":400};
-        }
-
-        res.send(responseData);
-    });
-
 module.exports = app;
